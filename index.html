@@ -1,25 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+    lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Ahatolii Ivanov">
-    <meta name="description" content="This is a personal resume website i build myself">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>c# dev A. Ivanov</title>
+    <meta 
+        charset="UTF-8">
+    <meta 
+        name="author"
+        content="Ahatolii Ivanov">
+    <meta
+        name="description"
+        content="This is a personal resume website i build myself">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>
+        c# dev A. Ivanov
+    </title>
 </head>
 <body>
     <header>
-            <h4>
+            <h3>
                 Welcome to my personal website, does it shows I build it myself?
-            </h4>
+            </h3>
     </header>
     <main>
         <article>
             <h1>
                 C# developer Anatolii Ivanov
             </h1>
-            <section id="intro">
-                <h3>Introduction</h3>
+            <section
+                id="intro">
+                <h2>
+                    Introduction
+                </h2>
                 <p>
                     Hello! My name is Anatolii Ivanov,
                     and I have spent a decade designing
@@ -29,8 +42,11 @@
                     to dive into building apps first hand.
                 </p>
             </section>
-            <section id="education">
-                <h3>Education</h3>
+            <section
+                id="education">
+                <h2>
+                    Education
+                </h2>
                 <p>
                     I graduated in a very wide field of civil engineering
                     but since very first job stayed on the path of 
@@ -39,8 +55,11 @@
                     (5 years, which is equal to Master's degree).
                 </p>
             </section>
-            <section id="experience">
-                <h3>Experience</h3>
+            <section
+                id="experience">
+                <h2>
+                    Experience
+                </h2>
                 <p>
                     During my 10 year career office has been both
                     remote and upstairs from fabrication workshop.
@@ -57,8 +76,11 @@
                     become a father.
                 </p>
             </section>
-            <section id="values">
-                <h3>Values</h3>
+            <section
+                id="values">
+                <h2>
+                    Values
+                </h2>
                 <p>
                     Working under pressure of a real fabrication workshop,
                     made me super result oriented. If I know that we cant
@@ -75,11 +97,14 @@
                     bottlenecks in my, or someone else work.
                 </p>
             </section>
-            <section id="projects">
-                <h3>Projects</h3>
+            <section
+                id="projects">
+                <h2>
+                    Projects
+                </h2>
                 <p>
                     Check out my github profile at 
-                    <a href="https://github.com/keepdream1ng">
+                    <a href="https://github.com/keepdream1ng" target="_blank">
                         github.com/keepdream1ng.
                     </a>
                     For now I have time to make projects what are part of Skillfactory
@@ -88,27 +113,77 @@
                     get a pet project and figure out free cloud options for it.
                 </p>
             </section>
-            <section id="contact_me">
-                <h3>Contact Me</h3>
-                <form action="https://docs.google.com/forms/d/e/1FAIpQLSd-heOVLEcuOV4xF2GQkfYOCE_NZL_sZZvHFO3vcUqvbfcKBQ/formResponse">
-                    <input type="text" name="entry.1554617462" placeholder="Your Name">
-                    <br>
-                    <input type="email" name="entry.550053256" placeholder="Your Email" required>
-                    <br>
-                    <textarea  name="entry.1331793163" placeholder="Your Message"></textarea>
-                    <br>
-                    <button type="submit">Send</button>
+            <section
+                id="contactMe">
+                <h2>
+                    Contact Me
+                </h2>
+                <form
+                    action="https://docs.google.com/forms/d/e/1FAIpQLSd-heOVLEcuOV4xF2GQkfYOCE_NZL_sZZvHFO3vcUqvbfcKBQ/formResponse"
+                    method="post"
+                    >
+                    <fieldset>
+                        <label
+                            for="nameInput">
+                            Name:
+                        </label>
+                        <input
+                            type="text"
+                            name="entry.1554617462"
+                            id="nameInput"
+                            placeholder="Your Name">
+                        <br>
+                        <label
+                            for="emailInput">
+                            Email:
+                        </label>
+                        <input
+                            type="email"
+                            name="entry.550053256"
+                            placeholder="Your Email"
+                            id="emailInput"
+                            required>
+                        <br>
+                        <label
+                            for="messageInput">
+                            Message:
+                        </label>
+                        <!--Seems like textarea is the special tag, what dont like my formatting
+                        by not showing up the placeholder if closing tag on the different line.-->
+                        <textarea name="entry.1331793163" id="messageInput" rows="3" cols="20" placeholder="Your Message"></textarea>
+                        <br>
+                        <button
+                            type="submit">
+                            Send
+                        </button>
+                    </fieldset>
                 </form>
             </section>
         </article>
     </main>
-    <footer id="contacts">
-        <a href="https://www.linkedin.com/in/anatolii-ivanov-b8619a253">
+    <footer
+        id="contacts">
+        <a
+            href="https://www.linkedin.com/in/anatolii-ivanov-b8619a253"
+            target="_blank">
             linkedin.com/anatolii-ivanov
         </a>
         <br>
-        <a href="https://t.me/dreamersince90s">
+        <a
+            href="https://t.me/dreamersince90s"
+            target="_blank">
             telegram dm
+        </a>
+        <br>
+        <a
+            href="https://github.com/keepdream1ng"
+            target="_blank">
+            github.com/keepdream1ng
+        </a>
+        <br>
+        <a
+            href="#">
+            back to the top
         </a>
     </footer>
 </body>
