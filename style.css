@@ -15,6 +15,7 @@
     --BGCOLOR-DIM: hsl(var(--BGCOLOR-HUE), calc(var(--MAIN-SAT) - 20%), var(--MAIN-LIGHT));
     --CONTRAST-COLOR: hsl(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT));
     --CONTRAST-COLOR-DIM: hsla(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT), 0.8);
+    --CONTRAST-COLOR-DIMER: hsla(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT), 0.4);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,27 +25,53 @@
     }
 }
 
-
 body {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: larger;
+    font-size: large;
     color: var(--CONTRAST-COLOR);
     background-color: var(--BGCOLOR);
-    padding: 1rem 1rem;
+    padding: 1rem 0.3rem;
 }
 
 button, input, textarea, select, fieldset{
     font: inherit;
     color: inherit;
     background-color: inherit;
-    border-style: solid;
-    border-color: var(--CONTRAST-COLOR-DIM);
     border: 1px solid var(--CONTRAST-COLOR-DIM);
     border-radius: 0;
 }
 
 button, input, textarea, select{
     background-color: var(--BGCOLOR-DIM);
+}
+
+
+h1,
+h2{
+    font-size: 1.8rem;
+    height: 2.5rem;
+    padding: 0 0.5rem;
+}
+
+h1{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--BGCOLOR);
+    white-space: nowrap;
+}
+
+h2{
+    border: 1px solid var(--CONTRAST-COLOR-DIMER);
+    border-bottom: 0;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+section{
+    border: 1px solid var(--CONTRAST-COLOR-DIMER);
+    border-top: 0;
+    border-radius: 0 0 0.5rem 0.5rem;
+    padding: 0.5rem; 
 }
 
 section p{
@@ -63,3 +90,28 @@ a {
 a:hover {
     color: var(--CONTRAST-COLOR-DIM);
 }
+
+.flex-grid{
+    display:flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.flex-grid>*{
+    flex: 1;
+}
+
+ul{
+    list-style-type: none;
+}
+
+/* .reel{
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: row;
+    scroll-snap-type: mandatory;
+}
+
+.reel>*{
+    scroll-snap-align: start;
+} */
