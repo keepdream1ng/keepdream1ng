@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --BGCOLOR: 250;
+    --MAIN-SAT: 40%;
+    --MAIN-LIGHT: 70%;
+    --CONTRAST-COLOR: calc(var(--BGCOLOR) + 180);
+    --CONTRAST-SAT: var(--MAIN-SAT);
+    --CONTRAST-LIGHT: calc(var(--MAIN-LIGHT)/7);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --BGCOLOR: 200;
+        --MAIN-LIGHT: 10%;
+        --CONTRAST-LIGHT: calc(var(--MAIN-LIGHT)*7);
+    }
+}
+
+
+/* Простые селекторы*/
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: hsl(var(--CONTRAST-COLOR), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT));
+    background-color: hsl(var(--BGCOLOR), var(--MAIN-SAT), var(--MAIN-LIGHT));
+    padding: 1% 2%;
+}
+
+button, input, textarea, select{
+    font: inherit;
+}
+
+section p{
+    line-height: 1.5;
+    text-align: justify;
+}
