@@ -16,6 +16,8 @@
     --CONTRAST-COLOR: hsl(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT));
     --CONTRAST-COLOR-DIM: hsla(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT), 0.8);
     --CONTRAST-COLOR-DIMER: hsla(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT), 0.4);
+
+    scroll-behavior: smooth;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -48,17 +50,13 @@ button, input, textarea, select{
 
 h1,
 h2{
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     height: 2rem;
     padding: 0 0.5rem;
-}
-
-h1{
     position: sticky;
-    top: 0;
-    z-index: 100;
+    top: calc(var(--counter) * 2rem);
+    z-index: 1;
     background-color: var(--BGCOLOR);
-    white-space: nowrap;
 }
 
 h2{
@@ -72,6 +70,7 @@ section{
     border-top: 0;
     border-radius: 0 0 0.5rem 0.5rem;
     padding: 0.5rem; 
+    scroll-margin-top: 10rem;
 }
 
 section p{
@@ -104,14 +103,3 @@ a:hover {
 ul{
     list-style-type: none;
 }
-
-/* .reel{
-    display: grid;
-    gap: 1rem;
-    grid-auto-flow: row;
-    scroll-snap-type: mandatory;
-}
-
-.reel>*{
-    scroll-snap-align: start;
-} */
