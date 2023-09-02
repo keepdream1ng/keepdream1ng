@@ -70,7 +70,7 @@ section{
     border-top: 0;
     border-radius: 0 0 0.5rem 0.5rem;
     padding: 0.5rem; 
-    scroll-margin-top: 10rem;
+    scroll-margin-top: 12rem;
 }
 
 section p{
@@ -91,15 +91,32 @@ a:hover {
 }
 
 .flex-grid{
-    display:flex;
+    display: flex;
     gap: 1rem;
     flex-wrap: wrap;
 }
 
-.flex-grid>*{
-    flex: 1;
+.flex-grid>:first-child{
+    flex-basis: 400px;
+    flex-grow: 1;
+}
+
+.flex-grid>:last-child{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-basis: 400px;
+    flex-grow: 1;
 }
 
 ul{
     list-style-type: none;
+}
+
+svg{
+    fill: var(--CONTRAST-COLOR);
+}
+
+svg:hover {
+    fill: var(--CONTRAST-COLOR-DIM);
 }
