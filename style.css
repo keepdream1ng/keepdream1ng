@@ -5,36 +5,61 @@
 }
 
 :root {
-    --BGCOLOR: 250;
+    --BGCOLOR-HUE: 250;
     --MAIN-SAT: 40%;
     --MAIN-LIGHT: 70%;
-    --CONTRAST-COLOR: calc(var(--BGCOLOR) + 180);
+    --CONTRAST-COLOR-HUE: calc(var(--BGCOLOR-HUE) + 180);
     --CONTRAST-SAT: var(--MAIN-SAT);
     --CONTRAST-LIGHT: calc(var(--MAIN-LIGHT)/7);
+    --BGCOLOR: hsl(var(--BGCOLOR-HUE), var(--MAIN-SAT), var(--MAIN-LIGHT));
+    --BGCOLOR-DIM: hsl(var(--BGCOLOR-HUE), calc(var(--MAIN-SAT) - 20%), var(--MAIN-LIGHT));
+    --CONTRAST-COLOR: hsl(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT));
+    --CONTRAST-COLOR-DIM: hsla(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT), 0.8);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --BGCOLOR: 200;
-        --MAIN-LIGHT: 10%;
-        --CONTRAST-LIGHT: calc(var(--MAIN-LIGHT)*7);
+        --CONTRAST-LIGHT: 95%;
+        --MAIN-LIGHT: calc(var(--CONTRAST-LIGHT)/5);
     }
 }
 
 
-/* Простые селекторы*/
 body {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color: hsl(var(--CONTRAST-COLOR), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT));
-    background-color: hsl(var(--BGCOLOR), var(--MAIN-SAT), var(--MAIN-LIGHT));
-    padding: 1% 2%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    color: var(--CONTRAST-COLOR);
+    background-color: var(--BGCOLOR);
+    padding: 1rem 1rem;
+}
+
+button, input, textarea, select, fieldset{
+    font: inherit;
+    color: inherit;
+    background-color: inherit;
+    border-style: solid;
+    border-color: var(--CONTRAST-COLOR-DIM);
+    border: 1px solid var(--CONTRAST-COLOR-DIM);
+    border-radius: 0;
 }
 
 button, input, textarea, select{
-    font: inherit;
+    background-color: var(--BGCOLOR-DIM);
 }
 
 section p{
     line-height: 1.5;
-    text-align: justify;
+}
+
+fieldset{
+    display:grid;
+}
+
+a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+a:hover {
+    color: var(--CONTRAST-COLOR-DIM);
 }
