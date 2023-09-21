@@ -3,8 +3,8 @@ function setRandomBG_Hue(){
     document.documentElement.style.setProperty('--BGCOLOR-HUE', randomHue);
 }
 
-function setCssCounterForElements(htmlTag, startCounter){
-    let elements = Array.from(document.getElementsByTagName(htmlTag));
+function setCssCounterForElements(cssSelectors, startCounter){
+    let elements = Array.from(document.querySelectorAll(cssSelectors));
     elements.forEach((item) => {
         item.style.setProperty('--counter', startCounter++);
     });
