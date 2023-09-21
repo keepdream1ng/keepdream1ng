@@ -7,7 +7,7 @@
 :root {
     --BGCOLOR-HUE: 220.2;
     --MAIN-SAT: 40%;
-    --MAIN-LIGHT: 70%;
+    --MAIN-LIGHT: 80%;
     --CONTRAST-COLOR-HUE: calc(var(--BGCOLOR-HUE) + 180);
     --CONTRAST-SAT: var(--MAIN-SAT);
     --CONTRAST-LIGHT: calc(var(--MAIN-LIGHT)/7);
@@ -22,7 +22,7 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --CONTRAST-LIGHT: 95%;
+        --CONTRAST-LIGHT: 90%;
         --MAIN-LIGHT: calc(var(--CONTRAST-LIGHT)/5);
     }
 }
