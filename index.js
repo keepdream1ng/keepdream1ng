@@ -32,3 +32,11 @@ const setSectionsColourfull = function(){
         `;
     });
 }
+
+const setHideOnScroll = function(){
+    document.addEventListener("scroll", () =>{
+        passFuncToSelectedBasedOnOrderI(".hideOnScroll", (I, item) =>{
+            item.style.display = "none";
+        })
+    }, {once : true});
+}

@@ -28,11 +28,13 @@
         document.addEventListener("DOMContentLoaded", e => {
             setHeadersStickyAndColourfull();
             setSectionsColourfull();
+            setHideOnScroll();
         })
     </script>
 </head>
 <body>
-    <header>
+    <header
+        class="hideOnScroll">
             <p>
                 Welcome to my personal website, does it shows I build it myself?
             </p>
