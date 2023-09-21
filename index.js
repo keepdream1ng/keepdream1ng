@@ -3,9 +3,15 @@ function setRandomBG_Hue(){
     document.documentElement.style.setProperty('--BGCOLOR-HUE', randomHue);
 }
 
-function setCssCounterForElements(cssSelectors, startCounter){
-    let elements = Array.from(document.querySelectorAll(cssSelectors));
-    elements.forEach((item) => {
-        item.style.setProperty('--counter', startCounter++);
+function setCssCounterForElements(cssSelectors){
+    passFuncToSelectedBasedOnOrderI(cssSelectors, (I, item) =>{
+        item.style.setProperty('--counter', I);
     });
+}
+
+function passFuncToSelectedBasedOnOrderI(cssSelectors, func){
+    let elements = document.querySelectorAll(cssSelectors);
+    for (let I = 0; I < elements.length; I++){
+        func(I, elements[I]);
+    }
 }
