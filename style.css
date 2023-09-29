@@ -16,6 +16,7 @@
     --CONTRAST-COLOR: hsl(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT));
     --CONTRAST-COLOR-DIM: hsla(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT), 0.8);
     --CONTRAST-COLOR-DIMER: hsla(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT), 0.4);
+    --HEADER_HIGHT: 2rem;
 
     scroll-behavior: smooth;
 }
@@ -63,7 +64,7 @@ textarea:focus{
 h1,
 h2{
     font-size: 1.5rem;
-    height: 2rem;
+    height: var(--HEADER_HIGHT);
     padding: 0 0.5rem;
     background-color: var(--BGCOLOR);
 }

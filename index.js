@@ -18,7 +18,7 @@ const setHeadersStickyAndColourfull = function(){
     passFuncToSelectedBasedOnOrderI("main h1, main h2", (I, item) =>{
         item.style.cssText = `
             position: sticky;
-            top: calc(${I} * 2rem);
+            top: calc(${I} * var(--HEADER_HIGHT));
             z-index: 1;
             background-color: hsl(${initialHue + stepOfHue * I}, var(--MAIN-SAT), var(--MAIN-LIGHT));
         `;
