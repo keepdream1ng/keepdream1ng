@@ -17,8 +17,10 @@ const setRandomBG_Hue = function(){
 }
 
 const getRelativeHeight = function(element, position){
-    const elementRect = element.getBoundingClientRect();
-    if (position > elementRect.y){
+    if (!element.hasOwnProperty("boundingRect")){
+        element.boundingRect = element.getBoundingClientRect();
+    }
+    if (position > element.boundingRect.y){
         return "above";
     } else{
         return "below";
@@ -29,13 +31,14 @@ const setHeadersStickyAndColourfull = function(){
     passFuncToSelectedBasedOnOrderI("main h1, main h2", (item, i, length) =>{
         item.countFromTop = i;
         item.countFromBottom = length - i - 1;
+        item.relativeHeight = getRelativeHeight(item, middleOfTheWindow);
         item.style.cssText = `
             position: sticky;
             top: calc(${i} * var(--HEADER_HIGHT));
             z-index: 1;
             background-color: hsl(${initialHue + stepOfHue * i}, var(--MAIN-SAT), var(--MAIN-LIGHT));
         `;
-        console.log(getRelativeHeight(item, middleOfTheWindow));
+        console.log(item.relativeHeight);
     });
 }
 
