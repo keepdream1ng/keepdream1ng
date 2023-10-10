@@ -3,7 +3,7 @@ function passFuncToSelectedBasedOnOrderI(cssSelectors, func){
     let elements = document.querySelectorAll(cssSelectors);
     const length = elements.length;
     for (let I = 0; I < length; I++){
-        func(I, elements[I], length);
+        func(elements[I], I, length);
     }
 }
 
@@ -16,7 +16,7 @@ const setRandomBG_Hue = function(){
 }
 
 const setHeadersStickyAndColourfull = function(){
-    passFuncToSelectedBasedOnOrderI("main h1, main h2", (I, item) =>{
+    passFuncToSelectedBasedOnOrderI("main h1, main h2", (item, I) =>{
         item.style.cssText = `
             position: sticky;
             top: calc(${I} * var(--HEADER_HIGHT));
@@ -27,7 +27,7 @@ const setHeadersStickyAndColourfull = function(){
 }
 
 const setSectionsColourfull = function(){
-    passFuncToSelectedBasedOnOrderI("main section", (I, item) =>{
+    passFuncToSelectedBasedOnOrderI("main section", (item, I) =>{
         item.style.cssText = `
             background-color: hsl(${initialHue + stepOfHue * (I + 1)}, var(--MAIN-SAT), var(--MAIN-LIGHT));
         `;
@@ -36,7 +36,7 @@ const setSectionsColourfull = function(){
 
 const setHideOnScroll = function(){
     document.addEventListener("scroll", () =>{
-        passFuncToSelectedBasedOnOrderI(".hideOnScroll", (I, item) =>{
+        passFuncToSelectedBasedOnOrderI(".hideOnScroll", (item) =>{
             item.style.display = "none";
         })
     }, {once : true});
