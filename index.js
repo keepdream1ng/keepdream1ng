@@ -1,8 +1,9 @@
 
 function passFuncToSelectedBasedOnOrderI(cssSelectors, func){
     let elements = document.querySelectorAll(cssSelectors);
-    for (let I = 0; I < elements.length; I++){
-        func(I, elements[I]);
+    const length = elements.length;
+    for (let I = 0; I < length; I++){
+        func(I, elements[I], length);
     }
 }
 
