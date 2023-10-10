@@ -30,7 +30,10 @@
             setHeadersStickyAndColourfull();
             setSectionsColourfull();
             setHideOnScroll();
-        })
+        });
+        document.addEventListener("scroll", () => {
+            handleScroll();
+        });
     </script>
 </head>
 <body>

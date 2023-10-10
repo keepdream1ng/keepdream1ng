@@ -8,9 +8,9 @@ function passFuncToSelectedBasedOnOrderI(cssSelectors, func){
 }
 
 const middleOfTheWindow = window.innerHeight * 0.5;
-// positions of elements relative to window
 const ABOVE = "html element is above middle of the window";
 const BELOW = "html element is below middle of the window";
+const STICKY_HEADERS_QUERY = "main h1, main h2";
 // color settings for dynamic hsl pallet
 const INITIAL_HUE = Math.random() * 360;
 const STEP_OF_HUE = 10;
@@ -20,29 +20,47 @@ const setRandomBG_Hue = function(){
 }
 
 const getRelativeHeight = function(element, position){
-    if (!element.hasOwnProperty("boundingRect")){
-        element.boundingRect = element.getBoundingClientRect();
-    }
-    if (position > element.boundingRect.y){
+    const boundingRect = element.getBoundingClientRect();
+    if (position > boundingRect.y){
         return ABOVE;
     } else{
         return BELOW;
     }
 }
 
+const setCssStickyPosPropOnRelativeHeight = function(element){
+    let currentRelativePos = getRelativeHeight(element, middleOfTheWindow);
+    if (currentRelativePos == element.relativeHeight) {return}
+    element.relativeHeight = currentRelativePos;
+    if (currentRelativePos == ABOVE){
+        element.style.bottom = null;
+        element.style.top = `calc(${element.countFromTop} * var(--HEADER_HIGHT))`;
+    } else{
+        element.style.top = null;
+        element.style.bottom = `calc(${element.countFromBottom} * var(--HEADER_HIGHT))`;
+    }
+}
+
 const setHeadersStickyAndColourfull = function(){
-    passFuncToSelectedBasedOnOrderI("main h1, main h2", (item, i, length) =>{
+    passFuncToSelectedBasedOnOrderI(STICKY_HEADERS_QUERY, (item, i, length) =>{
         item.countFromTop = i;
         item.countFromBottom = length - i - 1;
-        item.relativeHeight = getRelativeHeight(item, middleOfTheWindow);
         item.style.cssText = `
             position: sticky;
-            top: calc(${i} * var(--HEADER_HIGHT));
             z-index: 1;
             background-color: hsl(${INITIAL_HUE + STEP_OF_HUE * i}, var(--MAIN-SAT), var(--MAIN-LIGHT));
         `;
-        console.log(item.relativeHeight);
+        // console.log(getRelativeHeight(item));
+        setCssStickyPosPropOnRelativeHeight(item);
     });
+}
+
+function handleScroll() {
+    const stickyHeaders = document.querySelectorAll(STICKY_HEADERS_QUERY);
+    for (let i = 0; i < stickyHeaders.length; i++){
+        setCssStickyPosPropOnRelativeHeight(stickyHeaders[i]);
+        // console.log(`${stickyHeaders[i].innerHTML}: ${getRelativeHeight(stickyHeaders[i], middleOfTheWindow)}`);
+    }
 }
 
 const setSectionsColourfull = function(){
