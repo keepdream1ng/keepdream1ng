@@ -7,6 +7,7 @@ function passFuncToSelectedBasedOnOrderI(cssSelectors, func){
     }
 }
 
+const middleOfTheWindow = window.innerHeight * 0.5;
 // color settings for dynamic hsl pallet
 const initialHue = Math.random() * 360;
 const stepOfHue = 10;
@@ -15,14 +16,26 @@ const setRandomBG_Hue = function(){
     document.documentElement.style.setProperty('--BGCOLOR-HUE', initialHue);
 }
 
+const getRelativeHeight = function(element, position){
+    const elementRect = element.getBoundingClientRect();
+    if (position > elementRect.y){
+        return "above";
+    } else{
+        return "below";
+    }
+}
+
 const setHeadersStickyAndColourfull = function(){
-    passFuncToSelectedBasedOnOrderI("main h1, main h2", (item, I) =>{
+    passFuncToSelectedBasedOnOrderI("main h1, main h2", (item, i, length) =>{
+        item.countFromTop = i;
+        item.countFromBottom = length - i - 1;
         item.style.cssText = `
             position: sticky;
-            top: calc(${I} * var(--HEADER_HIGHT));
+            top: calc(${i} * var(--HEADER_HIGHT));
             z-index: 1;
-            background-color: hsl(${initialHue + stepOfHue * I}, var(--MAIN-SAT), var(--MAIN-LIGHT));
+            background-color: hsl(${initialHue + stepOfHue * i}, var(--MAIN-SAT), var(--MAIN-LIGHT));
         `;
+        console.log(getRelativeHeight(item, middleOfTheWindow));
     });
 }
 
