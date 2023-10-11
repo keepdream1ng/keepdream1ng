@@ -19,6 +19,8 @@
     --HEADER_HIGHT: 2rem;
 
     scroll-behavior: smooth;
+    display: fixed;
+    min-height: 100vh;
 }
 
 @media (prefers-color-scheme: dark) {
