@@ -40,6 +40,13 @@ const setCssStickyPosPropOnRelativeHeight = function(element){
     }
 }
 
+const toggleStickyClasses = function(element){
+    element.classList.toggle('stickyTopHeader');
+    element.classList.toggle('stickyBottomHeader');
+    element.classList.toggle('stickyTopHeader');
+    element.classList.toggle('stickyBottomHeader');
+}
+
 const setHeadersStickyAndColourfull = function(){
     passFuncToSelectedBasedOnOrderI(STICKY_HEADERS_QUERY, (item, i, length) =>{
         item.style.cssText = `
@@ -59,6 +66,13 @@ function handleScroll() {
         document.stickyHeaders = Array.from(document.querySelectorAll(STICKY_HEADERS_QUERY));
     }
     document.stickyHeaders.forEach(setCssStickyPosPropOnRelativeHeight);
+}
+
+function handleResize() {
+    if (!document.hasOwnProperty("stickyHeaders")){
+        document.stickyHeaders = Array.from(document.querySelectorAll(STICKY_HEADERS_QUERY));
+    }
+    document.stickyHeaders.forEach(toggleStickyClasses);
 }
 
 const setSectionsColourfull = function(){

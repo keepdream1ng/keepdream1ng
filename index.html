@@ -34,6 +34,16 @@
         document.addEventListener("scroll", () => {
             handleScroll();
         });
+        let isResizing = false;
+        document.addEventListener("resize", () => {
+            if (!isResizing){
+                isResizing = true;
+                setTimeout(() => {
+                    handleResize();
+                    isResizing = false;
+                }, 100);
+            }
+        });
     </script>
 </head>
 <body>
