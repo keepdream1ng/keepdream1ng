@@ -64,7 +64,7 @@ function handleScroll() {
 }
 
 const setSectionsColourfull = function(){
-    passFuncToSelectedBasedOnOrderI("main section", (item, I) =>{
+    passFuncToSelectedBasedOnOrderI("section", (item, I) =>{
         item.style.cssText = `
             background-color: hsl(${INITIAL_HUE + STEP_OF_HUE * (I + 1)}, var(--MAIN-SAT), var(--MAIN-LIGHT));
         `;
