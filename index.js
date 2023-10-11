@@ -1,3 +1,10 @@
+const middleOfTheWindow = window.innerHeight * 0.5;
+const ABOVE = "html element is above middle of the window";
+const BELOW = "html element is below middle of the window";
+const STICKY_HEADERS_QUERY = "main h1, main h2";
+// color settings for dynamic hsl pallet
+const INITIAL_HUE = Math.random() * 360;
+const STEP_OF_HUE = 10;
 
 function passFuncToSelectedBasedOnOrderI(cssSelectors, func){
     let elements = document.querySelectorAll(cssSelectors);
@@ -6,14 +13,6 @@ function passFuncToSelectedBasedOnOrderI(cssSelectors, func){
         func(elements[I], I, length);
     }
 }
-
-const middleOfTheWindow = window.innerHeight * 0.5;
-const ABOVE = "html element is above middle of the window";
-const BELOW = "html element is below middle of the window";
-const STICKY_HEADERS_QUERY = "main h1, main h2";
-// color settings for dynamic hsl pallet
-const INITIAL_HUE = Math.random() * 360;
-const STEP_OF_HUE = 10;
 
 const setRandomBG_Hue = function(){
     document.documentElement.style.setProperty('--BGCOLOR-HUE', INITIAL_HUE);
