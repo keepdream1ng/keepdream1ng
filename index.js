@@ -33,19 +33,19 @@ const setCssStickyPosPropOnRelativeHeight = function(element){
     if (currentRelativePos == element.relativeHeight) {return}
     element.relativeHeight = currentRelativePos;
     if (currentRelativePos == ABOVE){
-        element.style.bottom = null;
-        element.style.top = `calc(${element.countFromTop} * var(--HEADER_HIGHT))`;
+        element.classList.add('stickyTopHeader');
+        element.classList.remove('stickyBottomHeader');
     } else{
-        element.style.top = null;
-        element.style.bottom = `calc(${element.countFromBottom} * var(--HEADER_HIGHT))`;
+        element.classList.add('stickyBottomHeader');
+        element.classList.remove('stickyTopHeader');
     }
 }
 
 const setHeadersStickyAndColourfull = function(){
     passFuncToSelectedBasedOnOrderI(STICKY_HEADERS_QUERY, (item, i, length) =>{
-        item.countFromTop = i;
-        item.countFromBottom = length - i - 1;
         item.style.cssText = `
+            --coutFromTop: ${i};
+            --coutFromBottom: ${length - i - 1};
             position: sticky;
             z-index: 1;
             background-color: hsl(${INITIAL_HUE + STEP_OF_HUE * i}, var(--MAIN-SAT), var(--MAIN-LIGHT));

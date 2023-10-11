@@ -138,3 +138,11 @@ svg{
 svg:hover {
     fill: var(--CONTRAST-COLOR-DIM);
 }
+
+.stickyTopHeader {
+    top: calc(var(--coutFromTop) * var(--HEADER_HIGHT))
+}
+
+.stickyBottomHeader {
+    bottom: calc(var(--coutFromBottom) * var(--HEADER_HIGHT))
+}
