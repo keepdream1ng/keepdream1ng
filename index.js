@@ -56,11 +56,10 @@ const setHeadersStickyAndColourfull = function(){
 }
 
 function handleScroll() {
-    const stickyHeaders = document.querySelectorAll(STICKY_HEADERS_QUERY);
-    for (let i = 0; i < stickyHeaders.length; i++){
-        setCssStickyPosPropOnRelativeHeight(stickyHeaders[i]);
-        // console.log(`${stickyHeaders[i].innerHTML}: ${getRelativeHeight(stickyHeaders[i], middleOfTheWindow)}`);
+    if (!document.hasOwnProperty("stickyHeaders")){
+        document.stickyHeaders = Array.from(document.querySelectorAll(STICKY_HEADERS_QUERY));
     }
+    document.stickyHeaders.forEach(setCssStickyPosPropOnRelativeHeight);
 }
 
 const setSectionsColourfull = function(){
