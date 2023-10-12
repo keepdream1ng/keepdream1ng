@@ -25,18 +25,26 @@
     </script>
     <script>
         history.scrollRestoration = 'manual';
+        console.log(detectDeviceType()); // "Mobile" or "Desktop"
         setRandomBG_Hue();
         document.addEventListener("DOMContentLoaded", e => {
             setHeadersStickyAndColourfull();
             setSectionsColourfull();
             setHideOnScroll();
+            if (detectDeviceType() == "Mobile"){
+                const wrapper = document.querySelector(".mobile-scrollable-wrapper");
+                wrapper.addEventListener("scroll", () => {
+                    handleScroll();
+                });
+            }
         });
         document.addEventListener("scroll", () => {
             handleScroll();
         });
     </script>
 </head>
-<body>
+<body class="mobile-wrapper">
+    <div class="mobile-scrollable-wrapper">
     <header
         class="hideOnScroll">
             <p>
@@ -236,5 +244,6 @@
             </ul>
         </section>
     </footer>
+    </div>
 </body>
 </html>

@@ -30,7 +30,7 @@
 }
 
 html {
-    top: 0;
+    bottom: 0;
     left: 0;
     overflow-x: hidden;
 }
@@ -46,6 +46,21 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.mobile-wrapper{
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+    max-height: 100svh;
+}
+
+.mobile-scrollable-wrapper{
+    position: relative;
+    bottom: 0;
+    overflow-y: auto;
+    max-height: 95svh;
+    margin-right: 1rem;
 }
 
 button, input, textarea, select, fieldset{
