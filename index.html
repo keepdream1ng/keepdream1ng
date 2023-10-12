@@ -25,13 +25,12 @@
     </script>
     <script>
         history.scrollRestoration = 'manual';
-        console.log(detectDeviceType()); // "Mobile" or "Desktop"
         setRandomBG_Hue();
         document.addEventListener("DOMContentLoaded", e => {
             setHeadersStickyAndColourfull();
             setSectionsColourfull();
             setHideOnScroll();
-            if (detectDeviceType() == "Mobile"){
+            if (useScrollableDiv()){
                 const body = document.querySelector("body");
                 body.classList.add("mobile-wrapper")
                 const wrapper = document.getElementById("mobile-wrapper-for-body-children");
@@ -48,6 +47,10 @@
     </script>
 </head>
 <body>
+    <!--
+        this wrapper here to bugfix sticky headers on mobile,
+        where there was some strange behavior during address bar hiding. 
+    -->
     <div
         id="mobile-wrapper-for-body-children">
         <header

@@ -14,10 +14,21 @@ function passFuncToSelectedBasedOnOrderI(cssSelectors, func){
     }
 }
 
-function detectDeviceType() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+function useScrollableDiv() {
+    // Get the user-agent string 
+    const userAgentString =  
+        navigator.userAgent; 
+    const deviceType = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgentString)
         ? 'Mobile'
         : 'Desktop';
+    // Detect Chrome 
+    let chromeAgent = userAgentString.indexOf("Chrome") > -1; 
+    // Detect Safari 
+    let safariAgent = userAgentString.indexOf("Safari") > -1; 
+    // Discard Safari since it also matches Chrome 
+    if ((chromeAgent) && (safariAgent)) safariAgent = false; 
+    // console.log(`${deviceType}, safari: ${safariAgent}`);
+    return ((deviceType == 'Mobile') && (safariAgent == false));
 }
 
 const setRandomBG_Hue = function(){
