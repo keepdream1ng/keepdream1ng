@@ -19,7 +19,6 @@
     --HEADER_HIGHT: 2rem;
 
     scroll-behavior: smooth;
-    display: fixed;
     min-height: 100vh;
 }
 
@@ -31,9 +30,9 @@
 }
 
 html {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
 }
 
 body {
@@ -44,6 +43,9 @@ body {
     padding: 1rem 0.3rem;
     min-height: 100vh;
     max-width: 1000px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 button, input, textarea, select, fieldset{
