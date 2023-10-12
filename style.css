@@ -61,10 +61,11 @@ body {
 .mobile-scrollable-wrapper{
     position: relative;
     bottom: 0;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch; /* for Safari */
+    overflow-y: scroll;
+    touch-action: manipulation;
     max-height: 97svh;
     padding-right: 0.5rem;
+    scroll-behavior: smooth;
 }
 
 button, input, textarea, select, fieldset{
