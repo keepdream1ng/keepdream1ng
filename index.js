@@ -14,10 +14,11 @@ function passFuncToSelectedBasedOnOrderI(cssSelectors, func){
     }
 }
 
-const detectDeviceType = () =>
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-    ? 'Mobile'
-    : 'Desktop';
+function detectDeviceType() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+        ? 'Mobile'
+        : 'Desktop';
+}
 
 const setRandomBG_Hue = function(){
     document.documentElement.style.setProperty('--BGCOLOR-HUE', INITIAL_HUE);
