@@ -17,6 +17,8 @@
     --CONTRAST-COLOR-DIM: hsla(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT), 0.8);
     --CONTRAST-COLOR-DIMER: hsla(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT), 0.4);
     --HEADER_HIGHT: 2rem;
+    --SMALL-WINDOW-HEIGHT: 100svh;
+    --LARGE-WINDOW-HEIGHT: 100lvh;
 
     scroll-behavior: smooth;
     min-height: 100vh;
@@ -60,6 +62,7 @@ body {
     position: relative;
     bottom: 0;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* for Safari */
     max-height: 97svh;
     padding-right: 0.5rem;
 }
