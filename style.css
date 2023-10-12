@@ -52,15 +52,16 @@ body {
     position: fixed;
     bottom: 0;
     overflow: hidden;
-    max-height: 100svh;
+    max-height: 100vh;
+    padding-top: calc(100vh - 97svh);
 }
 
 .mobile-scrollable-wrapper{
     position: relative;
     bottom: 0;
     overflow-y: auto;
-    max-height: 95svh;
-    margin-right: 1rem;
+    max-height: 97svh;
+    padding-right: 0.5rem;
 }
 
 button, input, textarea, select, fieldset{
