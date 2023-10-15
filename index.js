@@ -88,6 +88,7 @@ const setHeadersStickyAndColourfull = function(){
             z-index: 1;
             background-color: hsl(${INITIAL_HUE + STEP_OF_HUE * i}, var(--MAIN-SAT), var(--MAIN-LIGHT));
         `;
+        defineHeaderObserver(item);
         // console.log(getRelativeHeight(item));
         setCssStickyPosPropOnRelativeHeight(item);
     });
@@ -125,14 +126,16 @@ const defineScrollBehavior = function(targetObj){
 
 const defineHeaderObserver = function(header){
     let options = {
-        rootMargin: `${(header.countFromTop + 1) * header.clientHeight} 0px ${(header.countFromBottom + 1) * header.clientHeight} 0px`,
+        rootMargin: `-${(header.countFromTop + 1) * header.clientHeight}px 0px -${(header.countFromBottom + 1) * header.clientHeight}px 0px`,
         threshold: 0.5,
       };
-
+    console.log(options.rootMargin);
     let callback = (entries, observer) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting){
                 console.log(`${entry.target.innerHTML} intersecting`);
+            } else{
+                console.log(`${entry.target.innerHTML} is leaving`);
             }
             // Each entry describes an intersection change for one observed
             // target element:
