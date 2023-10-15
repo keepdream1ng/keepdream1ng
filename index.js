@@ -79,9 +79,11 @@ const setCssStickyPosPropOnRelativeHeight = function(element){
 
 const setHeadersStickyAndColourfull = function(){
     passFuncToSelectedBasedOnOrderI(STICKY_HEADERS_QUERY, (item, i, length) =>{
+        item.countFromTop = i;
+        item.countFromBottom = length - i - 1;
         item.style.cssText = `
-            --coutFromTop: ${i};
-            --coutFromBottom: ${length - i - 1};
+            --coutFromTop: ${item.countFromTop};
+            --coutFromBottom: ${item.countFromBottom};
             position: sticky;
             z-index: 1;
             background-color: hsl(${INITIAL_HUE + STEP_OF_HUE * i}, var(--MAIN-SAT), var(--MAIN-LIGHT));
@@ -119,4 +121,31 @@ const defineScrollBehavior = function(targetObj){
         handleScroll();
     });
     setHideOnScroll(targetObj);
+}
+
+const defineHeaderObserver = function(header){
+    let options = {
+        rootMargin: `${(header.countFromTop + 1) * header.clientHeight} 0px ${(header.countFromBottom + 1) * header.clientHeight} 0px`,
+        threshold: 0.5,
+      };
+
+    let callback = (entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting){
+                console.log(`${entry.target.innerHTML} intersecting`);
+            }
+            // Each entry describes an intersection change for one observed
+            // target element:
+            //   entry.boundingClientRect
+            //   entry.intersectionRatio
+            //   entry.intersectionRect
+            //   entry.isIntersecting
+            //   entry.rootBounds
+            //   entry.target
+            //   entry.time
+        });
+    };
+      
+    let observer = new IntersectionObserver(callback, options);
+    observer.observe(header);
 }

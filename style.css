@@ -16,7 +16,7 @@
     --CONTRAST-COLOR: hsl(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT));
     --CONTRAST-COLOR-DIM: hsla(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT), 0.8);
     --CONTRAST-COLOR-DIMER: hsla(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT), 0.4);
-    --HEADER_HIGHT: 2rem;
+    --HEADER_HEIGHT: 2rem;
     --SMALL-WINDOW-HEIGHT: 100svh;
     --LARGE-WINDOW-HEIGHT: 100lvh;
 
@@ -96,7 +96,7 @@ textarea:focus{
 h1,
 h2{
     font-size: 1.5rem;
-    height: var(--HEADER_HIGHT);
+    height: var(--HEADER_HEIGHT);
     padding: 0 0.5rem;
     background-color: var(--BGCOLOR);
 }
@@ -164,9 +164,9 @@ svg:hover {
 }
 
 .stickyTopHeader {
-    top: calc(var(--coutFromTop) * var(--HEADER_HIGHT))
+    top: calc(var(--coutFromTop) * var(--HEADER_HEIGHT))
 }
 
 .stickyBottomHeader {
-    bottom: calc(var(--coutFromBottom) * var(--HEADER_HIGHT))
+    bottom: calc(var(--coutFromBottom) * var(--HEADER_HEIGHT))
 }
