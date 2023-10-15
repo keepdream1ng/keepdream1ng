@@ -125,11 +125,12 @@ const defineScrollBehavior = function(targetObj){
 }
 
 const defineHeaderObserver = function(header){
+    const body = document.body;
+    const bodyPaddingTop = parseInt(getComputedStyle(body).getPropertyValue('padding-top'), 10); // Get the top padding value
     let options = {
-        rootMargin: `-${(header.countFromTop + 1) * header.clientHeight}px 0px -${(header.countFromBottom + 1) * header.clientHeight}px 0px`,
-        threshold: 0.5,
+        rootMargin: `-${bodyPaddingTop + (header.countFromTop + 1) * header.clientHeight}px 0px -${(header.countFromBottom + 1) * header.clientHeight}px 0px`,
+        threshold: 0.3,
       };
-    console.log(options.rootMargin);
     let callback = (entries, observer) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting){
