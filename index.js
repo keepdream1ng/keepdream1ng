@@ -118,9 +118,9 @@ const setHideOnScroll = function(targetObj){
 }
 
 const defineScrollBehavior = function(targetObj){
-    targetObj.addEventListener("scroll", () => {
-        handleScroll();
-    });
+    // targetObj.addEventListener("scroll", () => {
+    //     handleScroll();
+    // });
     setHideOnScroll(targetObj);
 }
 
@@ -133,6 +133,7 @@ const defineHeaderObserver = function(header){
       };
     let callback = (entries, observer) => {
         entries.forEach((entry) => {
+            setCssStickyPosPropOnRelativeHeight(entry.target);
             if (entry.isIntersecting){
                 console.log(`${entry.target.innerHTML} intersecting`);
             } else{

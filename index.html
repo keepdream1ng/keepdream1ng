@@ -27,8 +27,6 @@
         history.scrollRestoration = 'manual';
         setRandomBG_Hue();
         document.addEventListener("DOMContentLoaded", e => {
-            setHeadersStickyAndColourfull();
-            setSectionsColourfull();
             convertImgToInlineSVG('.InlineSvgWannabe');
             if (useScrollableDiv()){
                 const body = document.querySelector("body");
@@ -39,6 +37,8 @@
             } else{
                 defineScrollBehavior(document);
             }
+            setHeadersStickyAndColourfull();
+            setSectionsColourfull();
         });
     </script>
 </head>
