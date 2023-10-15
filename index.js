@@ -31,6 +31,26 @@ function useScrollableDiv() {
     return ((deviceType == 'Mobile') && (safariAgent == false));
 }
 
+const convertImgToInlineSVG = (query, callback) => {
+    const images = document.querySelectorAll(query);
+  
+    images.forEach(image => {
+      fetch(image.src)
+      .then(res => res.text())
+      .then(data => {
+        const parser = new DOMParser();
+        const svg = parser.parseFromString(data, 'image/svg+xml').querySelector('svg');
+  
+        if (image.id) svg.id = image.id;
+        if (image.className) svg.classList = image.classList;
+  
+        image.parentNode.replaceChild(svg, image);
+      })
+      .then(callback)
+      .catch(error => console.error(error))
+    });
+  }
+
 const setRandomBG_Hue = function(){
     document.documentElement.style.setProperty('--BGCOLOR-HUE', INITIAL_HUE);
 }
@@ -71,13 +91,6 @@ const setHeadersStickyAndColourfull = function(){
     });
 }
 
-function handleScroll() {
-    if (!document.hasOwnProperty("stickyHeaders")){
-        document.stickyHeaders = Array.from(document.querySelectorAll(STICKY_HEADERS_QUERY));
-    }
-    document.stickyHeaders.forEach(setCssStickyPosPropOnRelativeHeight);
-}
-
 const setSectionsColourfull = function(){
     passFuncToSelectedBasedOnOrderI("section", (item, I) =>{
         item.style.cssText = `
@@ -86,10 +99,24 @@ const setSectionsColourfull = function(){
     });
 }
 
-const setHideOnScroll = function(){
-    document.addEventListener("scroll", () =>{
+function handleScroll() {
+    if (!document.hasOwnProperty("stickyHeaders")){
+        document.stickyHeaders = Array.from(document.querySelectorAll(STICKY_HEADERS_QUERY));
+    }
+    document.stickyHeaders.forEach(setCssStickyPosPropOnRelativeHeight);
+}
+
+const setHideOnScroll = function(targetObj){
+    targetObj.addEventListener("scroll", () =>{
         passFuncToSelectedBasedOnOrderI(".hideOnScroll", (item) =>{
             item.style.display = "none";
         })
     }, {once : true});
+}
+
+const defineScrollBehavior = function(targetObj){
+    targetObj.addEventListener("scroll", () => {
+        handleScroll();
+    });
+    setHideOnScroll(targetObj);
 }
