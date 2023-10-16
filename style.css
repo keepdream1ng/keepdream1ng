@@ -24,11 +24,9 @@
     min-height: 100vh;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --CONTRAST-LIGHT: 90%;
-        --MAIN-LIGHT: calc(var(--CONTRAST-LIGHT)/5);
-    }
+.darkmode {
+    --CONTRAST-LIGHT: 90%;
+    --MAIN-LIGHT: calc(var(--CONTRAST-LIGHT)/5);
 }
 
 html {
@@ -169,4 +167,10 @@ svg:hover {
 
 .stickyBottomHeader {
     bottom: calc(var(--coutFromBottom) * var(--HEADER_HEIGHT))
+}
+
+.header-icon{
+    max-height: 70%;
+    z-index: 2;
+    float: right;
 }

@@ -26,6 +26,7 @@
     <script>
         history.scrollRestoration = 'manual';
         setRandomBG_Hue();
+        console.log(localStorage.getItem("setDarkMode"));
         document.addEventListener("DOMContentLoaded", e => {
             convertImgToInlineSVG('.InlineSvgWannabe');
             if (useScrollableDiv()){
@@ -59,7 +60,15 @@
             <article
                 class="reel">
                 <h1>
-                    C# developer Anatolii Ivanov
+                    C# dev A. Ivanov
+                    <span
+                        id="dark-mode-toggle"
+                        >
+                        <img
+                            class="header-icon InlineSvgWannabe"
+                            src="img/Icon_light_dark.svg"
+                            alt="icon for light and dark theme">
+                    </span>
                 </h1>
                 <a href="#intro">
                     <h2>
@@ -249,5 +258,6 @@
             </section>
         </footer>
     </div>
+    <script src="darkmode.js"></script>
 </body>
 </html>
