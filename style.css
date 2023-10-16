@@ -99,6 +99,10 @@ h2{
     background-color: var(--BGCOLOR);
 }
 
+h1{
+    margin-bottom: 0.5rem;
+}
+
 h2{
     border: 1px solid var(--CONTRAST-COLOR-DIMER);
     border-bottom: 0;
@@ -170,7 +174,8 @@ svg:hover {
 }
 
 .header-icon{
-    max-height: 70%;
+    max-height: 80%;
+    margin-top: 0.2rem;
     z-index: 2;
     float: right;
 }
