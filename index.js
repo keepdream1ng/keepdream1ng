@@ -89,7 +89,6 @@ const setHeadersStickyAndColourfull = function(){
             background-color: hsl(${INITIAL_HUE + STEP_OF_HUE * i}, var(--MAIN-SAT), var(--MAIN-LIGHT));
         `;
         defineHeaderObserver(item);
-        // console.log(getRelativeHeight(item));
         setCssStickyPosPropOnRelativeHeight(item);
     });
 }
@@ -129,7 +128,7 @@ const defineHeaderObserver = function(header){
     const bodyPaddingTop = parseInt(getComputedStyle(body).getPropertyValue('padding-top'), 10); // Get the top padding value
     let options = {
         rootMargin: `-${bodyPaddingTop + (header.countFromTop + 1) * header.clientHeight}px 0px -${(header.countFromBottom + 1) * header.clientHeight}px 0px`,
-        threshold: 0.2,
+        threshold: 0.3,
       };
     let callback = (entries, observer) => {
         entries.forEach((entry) => {
