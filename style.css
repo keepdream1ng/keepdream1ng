@@ -202,3 +202,7 @@ svg:hover {
 main section{
     padding-top: 2rem;
 }
+
+ol{
+    list-style: inside decimal;
+}
