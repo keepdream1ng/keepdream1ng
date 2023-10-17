@@ -95,7 +95,7 @@ h1,
 h2{
     font-size: 1.5rem;
     height: var(--HEADER_HEIGHT);
-    padding: 0 0.5rem;
+    padding: 0rem 0.5rem;
     background-color: var(--BGCOLOR);
 }
 
@@ -173,13 +173,17 @@ svg:hover {
     bottom: calc(var(--coutFromBottom) * var(--HEADER_HEIGHT))
 }
 
+.icon-wrapper{
+    display: inline;
+    float: right;
+    margin-right: 1.5rem;
+    margin-top: 0.2rem;
+}
+
 .header-icon{
     position: absolute;
-    max-height: 80%;
-    margin-top: 0.2rem;
+    height: 1.5rem;
     z-index: 2;
-    right: 2%;
-    transform: translate(0%, 0%);
 }
 
 .header-icon.animated{
@@ -190,8 +194,8 @@ svg:hover {
 }
 
 .header-in-view .header-icon.animated{
-    transform: scale(2) translate(20%, 0%);
-    -webkit-transform: scale(2) translate(-10%, -0%);
+    transform: scale(2);
+    -webkit-transform: scale(2);
 }
 
 /* to make room for scaling icon */
