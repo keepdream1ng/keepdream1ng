@@ -135,9 +135,9 @@ const defineHeaderObserver = function(header){
         entries.forEach((entry) => {
             setCssStickyPosPropOnRelativeHeight(entry.target);
             if (entry.isIntersecting){
-                console.log(`${entry.target.innerHTML} intersecting`);
+                entry.target.classList.add("header-in-view");
             } else{
-                console.log(`${entry.target.innerHTML} is leaving`);
+                entry.target.classList.remove("header-in-view");
             }
             // Each entry describes an intersection change for one observed
             // target element:
