@@ -175,16 +175,15 @@ svg:hover {
 
 .header-icon{
     position: absolute;
-    right: 0.5rem;
     max-height: 80%;
     margin-top: 0.2rem;
     z-index: 2;
+    right: 0.5rem;
 }
 
 .header-icon.animated{
     transition: transform 0.1s ease-in-out, transform-origin 0.1s ease-in-out, top 0.1s ease-in-out;
     transform-origin: center center;
-    transform: translateX(0); /* Start at the current position (no horizontal translation) */
 }
 
 .header-in-view .header-icon.animated{
