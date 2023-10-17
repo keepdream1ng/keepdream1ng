@@ -174,11 +174,11 @@ svg:hover {
 }
 
 .header-icon{
-    position: inherit;
+    position: absolute;
+    right: 0.5rem;
     max-height: 80%;
     margin-top: 0.2rem;
     z-index: 2;
-    float: right;
 }
 
 .header-icon.animated{
