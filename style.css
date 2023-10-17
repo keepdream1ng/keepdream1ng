@@ -178,19 +178,20 @@ svg:hover {
     max-height: 80%;
     margin-top: 0.2rem;
     z-index: 2;
-    left: 88%;
+    right: 2%;
+    transform: translate(0%, 0%);
 }
 
 .header-icon.animated{
     transition: transform 0.1s ease-in-out;
-    transform-origin: center top;
+    transform-origin: right top;
     transition: -webkit-transform 0.1s ease-in-out;
-    -webkit-transform-origin: center top;
+    -webkit-transform-origin: right top;
 }
 
 .header-in-view .header-icon.animated{
-    transform: scale(2);
-    -webkit-transform: scale(2);
+    transform: scale(2) translate(20%, 0%);
+    -webkit-transform: scale(2) translate(-10%, -0%);
 }
 
 /* to make room for scaling icon */
