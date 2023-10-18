@@ -23,24 +23,6 @@
         src="index.js"
         charset="UTF-8">
     </script>
-    <script>
-        history.scrollRestoration = 'manual';
-        setRandomBG_Hue();
-        document.addEventListener("DOMContentLoaded", e => {
-            convertImgToInlineSVG('.InlineSvgWannabe');
-            if (useScrollableDiv()){
-                const body = document.querySelector("body");
-                body.classList.add("mobile-wrapper")
-                const wrapper = document.getElementById("mobile-wrapper-for-body-children");
-                wrapper.classList.add("mobile-scrollable-wrapper")
-                defineScrollBehavior(wrapper);
-            } else{
-                defineScrollBehavior(document);
-            }
-            setHeadersStickyAndColourfull();
-            setSectionsColourfull();
-        });
-    </script>
 </head>
 <body>
     <!--
@@ -60,15 +42,21 @@
                 class="reel">
                 <h1>
                     C# dev A. Ivanov
-                    <div class="icon-wrapper">
-                    <span
-                        id="dark-mode-toggle"
+                    <a
+                        class="lang-anchor"
+                        href="ru.html"
                         >
-                        <img
-                            class="header-icon InlineSvgWannabe"
-                            src="img/Icon_light_dark.svg"
-                            alt="icon for light and dark theme">
-                    </span>
+                        RU
+                    </a>
+                    <div class="icon-wrapper">
+                        <span
+                            id="dark-mode-toggle"
+                            >
+                            <img
+                                class="header-icon InlineSvgWannabe"
+                                src="img/Icon_light_dark.svg"
+                                alt="icon for light and dark theme">
+                        </span>
                     </div>
                 </h1>
                 <a href="#intro">

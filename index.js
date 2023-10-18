@@ -153,3 +153,22 @@ const defineHeaderObserver = function(header){
     let observer = new IntersectionObserver(callback, options);
     observer.observe(header);
 }
+
+// End of declarations
+
+history.scrollRestoration = 'manual';
+setRandomBG_Hue();
+document.addEventListener("DOMContentLoaded", e => {
+    convertImgToInlineSVG('.InlineSvgWannabe');
+    if (useScrollableDiv()){
+        const body = document.querySelector("body");
+        body.classList.add("mobile-wrapper")
+        const wrapper = document.getElementById("mobile-wrapper-for-body-children");
+        wrapper.classList.add("mobile-scrollable-wrapper")
+        defineScrollBehavior(wrapper);
+    } else{
+        defineScrollBehavior(document);
+    }
+    setHeadersStickyAndColourfull();
+    setSectionsColourfull();
+});

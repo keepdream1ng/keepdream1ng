@@ -207,3 +207,12 @@ main section{
 ol{
     list-style: inside decimal;
 }
+
+.lang-anchor{
+    max-height: 100%;
+    font-size: 1rem;
+    position: absolute;
+    right: calc(var(--HEADER_HEIGHT) + 0.5rem);
+    top: 50%;
+    transform: translate(0, -50%);
+}
