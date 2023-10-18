@@ -52,8 +52,9 @@ body {
     position: fixed;
     bottom: 0;
     overflow: hidden;
+    padding-bottom: 0;
     max-height: 100vh;
-    padding-top: calc(100vh - 97svh);
+    padding-top: calc(100vh - 100svh);
 }
 
 .mobile-scrollable-wrapper{
@@ -61,7 +62,7 @@ body {
     bottom: 0;
     overflow-y: scroll;
     touch-action: manipulation;
-    max-height: 97svh;
+    max-height: 100svh;
     padding-right: 0.5rem;
     scroll-behavior: smooth;
 }
