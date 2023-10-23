@@ -216,3 +216,22 @@ ol{
     top: 50%;
     transform: translate(0, -50%);
 }
+
+.auto-grid{
+    --_min-column-size: 15rem;
+    display: grid;
+    gap: 1 rem;
+    grid-template-columns: 
+        repeat(auto-fit, minmax(min(var(--_min-column-size), 100%), 1fr));
+}
+
+.auto-grid>*{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    position: relative;
+}
+
+.tool-description{
+    padding: 0.5rem;
+    font-size: 1rem;
+}
