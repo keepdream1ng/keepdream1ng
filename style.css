@@ -16,7 +16,7 @@
     --CONTRAST-COLOR: hsl(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT));
     --CONTRAST-COLOR-DIM: hsla(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT), 0.8);
     --CONTRAST-COLOR-DIMER: hsla(var(--CONTRAST-COLOR-HUE), var(--CONTRAST-SAT), var(--CONTRAST-LIGHT), 0.4);
-    --HEADER_HEIGHT: 2rem;
+    --HEADER_HEIGHT: 1.8rem;
     --SMALL-WINDOW-HEIGHT: 100svh;
     --LARGE-WINDOW-HEIGHT: 100lvh;
 
@@ -94,7 +94,7 @@ textarea:focus{
 
 h1,
 h2{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     height: var(--HEADER_HEIGHT);
     padding: 0rem 0.5rem;
     background-color: var(--BGCOLOR);
@@ -183,7 +183,7 @@ svg:hover {
 
 .header-icon{
     position: absolute;
-    height: 1.5rem;
+    height: calc(var(--HEADER_HEIGHT) - 0.3rem);
     z-index: 2;
 }
 
@@ -195,8 +195,8 @@ svg:hover {
 }
 
 .header-in-view .header-icon.animated{
-    transform: scale(2);
-    -webkit-transform: scale(2);
+    transform: scale(2.5);
+    -webkit-transform: scale(2.5);
 }
 
 /* to make room for scaling icon */
