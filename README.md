@@ -5,7 +5,7 @@ Now, I'm eagerly excited to dive into building apps :computer:📱 first hand.
 Technologies im used to as developer:
 1. .NET C# with Visual Studio.
 2. Git
-3. Skilled enough at HTML, CSS, Javascript.
+3. Skilled enough at HTML, CSS, Javascript to build web apps with ASP.NET and (optionally) Blazor.
 4. Beguiner at SQL.
 5. Beguiner at Docker.
 
