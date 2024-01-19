@@ -9,5 +9,8 @@ Technologies im used to as developer:
 4. Beguiner at SQL.
 5. Beguiner at Docker.
 
-I like CLI and widely use vim emulators in .net stuff. I started updating my [Linkedin page](https://www.linkedin.com/in/anatolii-ivanov-b8619a253/) though is still mostly about civil engineering but along with learning web developement with
-skillfactory i started building my "developer oriented" [website](https://keepdream1ng.github.io/keepdream1ng/). It's heavier in terms of words count than this resume, and i try out vanilla website building technics there.
+I like CLI and widely use vim emulators in dotnet stuff.
+I post updates for projects on my [Linkedin page](https://www.linkedin.com/in/anatolii-ivanov-b8619a253/) and there you can see my civil engineering experience.
+
+Along with learning web developement with Skillfactory I started building my "developer oriented" [website](https://keepdream1ng.github.io/keepdream1ng/).
+It's heavier in terms of words count than this resume, and it is build without any library or framework just vanilla HTML, CSS and Javascript.
