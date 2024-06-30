@@ -6,8 +6,9 @@ Technologies im used to as developer:
 1. .NET C# with Visual Studio.
 2. Git
 3. HTML, CSS, Javascript to build web apps with ASP.NET and (optionally) Blazor.
-4. SQL.
+4. WPF for desktor.
 5. Docker.
+6. SQL.
 
 I post updates for projects on my [Linkedin page](https://www.linkedin.com/in/anatolii-ivanov-b8619a253/) and there you can see my civil engineering experience.
 
