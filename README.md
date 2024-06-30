@@ -6,7 +6,7 @@ Technologies im used to as developer:
 1. .NET C# with Visual Studio.
 2. Git
 3. HTML, CSS, Javascript to build web apps with ASP.NET and (optionally) Blazor.
-4. WPF for desktor.
+4. WPF for desktop frontend (or web view with blazor components).
 5. Docker.
 6. SQL.
 
