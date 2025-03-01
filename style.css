@@ -235,3 +235,13 @@ ol{
     padding: 0.5rem;
     font-size: 1rem;
 }
+
+.video-container{ 
+    display: flex;
+    justify-content: center;
+}
+
+.video-container iframe{
+    aspect-ratio: 16 / 9;
+    width: 100% !important;
+}
